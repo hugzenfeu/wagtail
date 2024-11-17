@@ -25,6 +25,8 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/firstSite.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/output.css' %}">
+
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
@@ -35,7 +37,7 @@
         {% wagtailuserbar %}
 
         {% block content %}{% endblock %}
-
+        {% include "includes/footer.html" %}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/firstSite.js' %}"></script>
 

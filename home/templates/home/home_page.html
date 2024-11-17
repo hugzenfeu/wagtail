@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 <!-- load wagtailcore_tags by adding this: -->
-{% load wagtailcore_tags wagtailimages_tags %}
+
+{% load wagtailcore_tags wagtailimages_tags  %}
 
 <!-- replace everything below with: -->
 {% block content %}
 <div>
-  <h1>{{ page.banner_title }}</h1>
+  <h1 className="border-10 border-blue-500 font-semibold">{{ page.banner_title }}</h1>
   {% image page.banner_image fill-480x320 %}
   <p>{{ page.banner_subtitle }}</p>
   {% if page.banner_cta %}
@@ -15,4 +16,6 @@
   </a>
   {% endif %}
 </div>
+<body class="flex center bg-blue-600">
 {{ page.body|richtext }} {% endblock %}
+</body>
