@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailuserbar tailwind_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,17 +24,24 @@
         {% endif %}
 
         {# Global stylesheets #}
+        
         <link rel="stylesheet" type="text/css" href="{% static 'css/firstSite.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/output.css' %}">
+        
 
 
         {% block extra_css %}
+        {% tailwind_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+      <div class="text-blue-600 bg-slate-400">test in base.html to see if tailwind works</div>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+  </h1>  
+      
+      {% wagtailuserbar %}
 
         {% block content %}{% endblock %}
         {% include "includes/footer.html" %}

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ 
     "home",
     "search",
     "base",
@@ -47,7 +47,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "tailwind",
+    "theme",
+    "django_browser_reload",
 ]
+
+TAILWIND_APP_NAME= "theme"
+INTERNAL_IPS = ["127.0.0.1",]
+
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -58,6 +66,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "firstSite.urls"
