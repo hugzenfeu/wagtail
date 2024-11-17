@@ -1,0 +1,2 @@
+# wagtail
+first wagtail site
